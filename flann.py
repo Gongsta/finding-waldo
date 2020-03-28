@@ -4,8 +4,8 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-waldo = cv2.imread('waldo.jpg', 0)
-waldo_background = cv2.imread('find/1.jpg', 0)
+waldo = cv2.imread('glasses-cropped.jpg', 0)
+waldo_background = cv2.imread('find/2.jpg', 0)
 
 #Will return an error if cv2 not installed properly
 sift = cv2.xfeatures2d.SIFT_create()
@@ -58,4 +58,4 @@ draw_params = dict(matchColor = (0,255,0), # draw matches in green color
 img3 = cv2.drawMatches(waldo,kp1,waldo_background,kp2,good,None,**draw_params)
 plt.imshow(img3, 'gray')
 plt.show()
-plt.savefig('trial5.png', dpi=1000)
+plt.savefig('FLANN_results/trial6.png', dpi=1000)
